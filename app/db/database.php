@@ -126,6 +126,12 @@ class Database {
 
     }
 
+    /**
+     * Método responsável por executar atualizações no banco de dados
+     * @param string $where
+     * @param array $values
+     * @return boolean
+     */
     public function update($where, $values) {
         // DADOS DA QUERY
         $fields = array_keys($values);
@@ -136,6 +142,23 @@ class Database {
         // EXECUTAR A QUERY
         $this->execute($query, array_values($values));
 
+        // RETORNA SUCESSO
+        return true;
+    }
+
+    /**
+     * Método responsável por excluir dados do banco
+     * @param string $where
+     * @return boolean
+     */
+    public function delete($where) {
+        // MONTA A QUERY
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+        // EXECUTAR A QUERY
+        $this->execute($query);
+
+        // RETORNA SUCESSO
         return true;
     }
 }

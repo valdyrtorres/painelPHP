@@ -5,13 +5,13 @@ require __DIR__.'/vendor/autoload.php';
 define('TITLE', 'Cadastrar vaga');
 
 use \App\Entity\Vaga;
+$obVaga = new Vaga;
 
 // debug
 //echo '<pre>'; print_r($_POST); echo "</pre>"; exit;
 
 //Validação do POST
 if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])) {
-    $obVaga = new Vaga;
     $obVaga->titulo = $_POST['titulo'];
     $obVaga->descricao = $_POST['descricao'];
     $obVaga->ativo = $_POST['ativo'];
