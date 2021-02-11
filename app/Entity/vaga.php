@@ -94,6 +94,17 @@ class Vaga{
     }
 
     /**
+     * Método responsável por obter a quantidade de vagas do banco de dados
+     * @param string $where
+     * @return integer
+     */
+    public static function getQuantidadeVagas($where = null) {
+        return(new Database('vagas'))->select($where, null, null, 'COUNT(*) as qtd')
+                                     ->fetchObject()
+                                     ->qtd;
+    }
+
+    /**
      * Método responsável por buscar uma vaga com base em seu ID
      * @param integer $id
      * @return Vaga
