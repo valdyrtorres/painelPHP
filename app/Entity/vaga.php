@@ -3,9 +3,9 @@
 namespace App\Entity;
 
 use \App\Db\Database;
-use PDOException;
 use PDO;
 
+// Namespace
 class Vaga{
 
     /**

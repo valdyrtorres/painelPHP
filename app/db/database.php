@@ -1,5 +1,5 @@
 <?php
-// Segue o conceito do query builder
+// Namespace Segue o conceito do query builder
 namespace App\Db;
 
 use \PDO;

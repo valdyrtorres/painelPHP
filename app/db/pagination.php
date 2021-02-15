@@ -2,6 +2,7 @@
 
 namespace App\Db;
 
+// Namespace
 class Pagination{
 
     /**

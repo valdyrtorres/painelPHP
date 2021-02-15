@@ -4,6 +4,10 @@ require __DIR__.'/vendor/autoload.php';
 
 use \App\Entity\Vaga;
 use \App\Db\Pagination;
+use \App\Session\Login;
+
+//Obriga o usuário a estar logado
+Login::requireLogin();
 
 //Busca
 $busca = filter_input(INPUT_GET, 'busca', FILTER_SANITIZE_STRING);

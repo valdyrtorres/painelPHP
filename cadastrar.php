@@ -5,6 +5,12 @@ require __DIR__.'/vendor/autoload.php';
 define('TITLE', 'Cadastrar vaga');
 
 use \App\Entity\Vaga;
+use \App\Session\Login;
+
+//Obriga o usuário a estar logado
+Login::requireLogin();
+
+// Instância de vaga
 $obVaga = new Vaga;
 
 // debug
